@@ -1,0 +1,13 @@
+﻿Current projects:
+
+<div>
+    <label for="projectFilter">Filter projects:</label>
+    <input id="projectFilter" type="text" ng-model="projectFilter" />
+</div>
+
+Projects
+<ul>
+    <li ng-repeat="p in projects | filter:projectFilter track by p.Id">
+        <a ui-sref="site.projects.project({projectId: p.Id})">{{p.Name}}</a>
+    </li>
+</ul>
